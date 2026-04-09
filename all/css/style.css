@@ -3122,6 +3122,7 @@ section#mt_faq-testi .section_heading{padding: 0;}
 }
 
 .history-timeline {
+    
     position: relative;
 }
 .history-timeline.history-time-mb {
@@ -3139,6 +3140,7 @@ section#mt_faq-testi .section_heading{padding: 0;}
     margin-top: 95px;
     padding: 0 30px 0;
     margin-right: 25px;
+  
 }
 .history-rt .expand-history {
     margin-right: 0;
