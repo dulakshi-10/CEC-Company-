@@ -2732,16 +2732,15 @@ section#mt_faq-testi .section_heading{padding: 0;}
     overflow: hidden;
 }
 .caption_slide1{
-  top: 23%;
-  left: 9%;
+
   width: 45%;
   right: auto;
   text-align: left;
   position: absolute;
   -webkit-animation-delay: 0s;
   animation-delay: 0s;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
   -webkit-animation-timing-function: cubic-bezier(.165,.84,.44,1);
   animation-timing-function: cubic-bezier(.165,.84,.44,1);
   z-index: 1;
