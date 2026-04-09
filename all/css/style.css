@@ -4876,4 +4876,21 @@ p.lt-pswrd{margin-bottom: 20px;}
    -ms-animation: none !important;
    animation: none !important;
   }
+
+
+  /* Text */
+   .company-text {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555;
+            text-align: justify;
+            font-family: 'Open Sans', sans-serif;
+            margin-bottom: 20px;
+            transition: 0.3s ease;
+        }
+
+        .company-text:hover {
+            color: #222;
+            transform: translateX(4px);
+        }
 }
