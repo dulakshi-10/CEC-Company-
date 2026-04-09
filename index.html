@@ -84,7 +84,7 @@
                         <a href="#">About Us <i class="fa fa-angle-down"></i></a>
                         <ul>
                             <li> <a href="About_us/About_CEC.html">About CEC</a></li>
-                           <li> <a href="About_us/Chairman.html">Chairman</a></li>
+                      
                            <li> <a href="About_us/Our_people.html">Our People</a></li>
                            <li> <a href="About_us/History_Timeline.html">History Timeline</a></li>
                        
@@ -412,47 +412,66 @@
 </section>
 <!--* End Fun And Facts*-->
 
-
 <style>
+        .section-title {
+            font-weight: 800;
+            color: #222;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .title-underline {
+            width: 60px;
+            height: 4px;
+            background-color: #004a99;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
         .project-card {
             text-align: center;
             padding: 20px;
             background: #ffffff;
             border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin-bottom: 25px;
-            border: 1px solid #eee;
-            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 0 auto 25px auto;
+            border: 1px solid #f1f1f1;
+            transition: all 0.3s ease;
+            max-width: 320px;
         }
 
         .project-card:hover {
-            transform: translateY(-5px); /* මවුසය ගෙනියද්දී පොඩ්ඩක් උඩට එනවා */
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #004a99;
         }
 
         .img-container {
             width: 100%;
             border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            background: #f8f9fa;
         }
 
         .img-container img {
             width: 100%;
-            height: 220px; 
-            object-fit: cover;
+            height: 180px; 
+            object-fit: contain; /* Logo එකක් නම් contain වඩාත් සුදුසුයි */
+            padding: 10px;
         }
 
         .fund-label {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            color: #777;
+            color: #6c757d;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            line-height: 1.3;
         }
 
         .amount-tag {
-            font-size: 2.4rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #004a99;
             margin: 0;
@@ -462,48 +481,49 @@
 <body class="bg-light">
 
     <div class="container py-5">
-        <div class="row">
+        
+        <div class="row mb-5 text-center">
+            <div class="col-12">
+                <h2 class="section-title">Pioneer in Construction Industry</h2>
+                <div class="title-underline"></div>
+                
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
             
             <div class="col-md-4">
                 <div class="project-card">
                     <div class="img-container">
                         <img src="all/images/adb.png" alt="ADB Project">
                     </div>
-                    <div class="fund-label">ADB Funded Project over</div>
-                    <div class="amount-tag">12Bn</div>
+                    <div class="fund-label">ADB Funded Projects</div>
+                    <div class="amount-tag">Over 12Bn</div>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="project-card">
                     <div class="img-container">
-                        <img src="all/images/lo.webp" alt="ADB Project">
+                        <img src="all/images/lo.webp" alt="Local Bank Project">
                     </div>
-                    <div class="fund-label">ADB Fund</div>
-                    <div class="amount-tag">12bn</div>
+                    <div class="fund-label">Local Bank Funded Projects</div>
+                    <div class="amount-tag">Over 10Bn</div>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="project-card">
                     <div class="img-container">
-                        <img src="all/images/adb.jpg" alt="ADB Project">
+                        <img src="all/images/w12.jpg" alt="World Bank Project">
                     </div>
-                    <div class="fund-label">ADB Fund</div>
-                    <div class="amount-tag">12bn</div>
+                    <div class="fund-label">World Bank Funded Projects</div>
+                    <div class="amount-tag">Over 10Bn</div>
                 </div>
             </div>
 
         </div>
     </div>
-
-
-
-
-
-
-
-
     <!--* Services*-->
     <section id="mt_services" >
         <div class="container">
@@ -790,26 +810,51 @@
 
             <div class="row slider-partner">
                 <div class="col-sm-2">
-                    <img src="all/images/blog-listing/award-2019.png" alt="partner">
+                    <img src="all/images/adb.png" alt="partner">
                 </div>
                 <div class="col-sm-2">
-                    <img src="all/images/blog-listing/award-2018png.png" alt="partner">
+                    <img src="all/images/world.jpg" alt="partner">
                 </div>
                 <div class="col-sm-2">
-                    <img src="all/images/slider/slide-3-cep3.png" alt="partner">
+                    <img src="all/images/blog-listing/hnb.png" alt="partner">
                 </div>
                 <div class="col-sm-2">
-                    <img src="all/images/blog-listing/award-2017.png" alt="partner">
+                    <img src="all/images/blog-listing/nsb.jpg" alt="partner">
                 </div>
                 <div class="col-sm-2">
-                    <img src="all/images/slider/hikkaduwa.png" alt="partner">
+                    <img src="all/images/blog-listing/boc.png" alt="partner">
                 </div>
                 <div class="col-sm-2">
-                    <img src="all/images/slider/slide-3-cep1.jpg" alt="partner">
+                    <img src="all/images/blog-listing/people.png" alt="partner">
                 </div>
             </div>
 
         </div>
+        <style>/* Logos athara parathara adu kirima */
+/* Container eke thiyena row ekata 'no-gutters' style eka danna */
+.slider-partner.row {
+    display: flex;
+    justify-content: center; /* Logos tika madata ganna */
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Logos thiyena columns wala padding okkoma ain karanna */
+.slider-partner .col-sm-2 {
+    padding-left: 2px !important;  /* Very small gap */
+    padding-right: 2px !important; /* Very small gap */
+    width: auto;                  /* Column eka image eke size ekatama auto hadanna */
+    display: flex;
+    align-items: center;
+}
+
+.slider-partner img {
+    max-height: 60px; /* Logos wala size eka thawa poddak adu kara langa nisa */
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+</style>
     </section>
     <!--* End partner*-->
 
