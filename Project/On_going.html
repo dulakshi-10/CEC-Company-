@@ -381,6 +381,272 @@ text-align: center;
 }
 </style>
 
+
+
+
+   <section id="mt_fun">
+    <div class="container wow slideInDown">
+        
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+                <div class="fun-content">
+                    <!-- <span class="mar-bottom-15">EXPERTS IN FIELD</span> -->
+                    <h2 class="mar-bottom-0">Unparallel Track Record </h2>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-12">
+                <div class="row facts_row">
+                    <div class="col-md-3 col-sm-3 col-xs-6 facts_col">
+                        <div class="fun-facts_wrapper text-center">
+                            <p class="fun-facts_title mar-bottom-30"> Years of <br>Experience </p>
+                            <p class="fun-facts_figure timer" data-to="22" data-speed="3000"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 facts_col">
+                        <div class="fun-facts_wrapper text-center">
+                            <p class="fun-facts_title mar-bottom-30"> ADB Projects <br>worth Bn </p>
+                            <p class="fun-facts_figure timer" data-to="50" data-speed="3000"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 facts_col">
+                        <div class="fun-facts_wrapper text-center">
+                            <p class="fun-facts_title mar-bottom-30"> World Bank Projects worth Bn </p>
+                            <p class="fun-facts_figure timer" data-to="40" data-speed="3000"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 facts_col">
+                        <div class="fun-facts_wrapper text-center">
+                            <p class="fun-facts_title mar-bottom-30"> Local Bank Projects worth Bn </p>
+                            <p class="fun-facts_figure timer" data-to="100" data-speed="3000"></p>
+                        </div>
+                    </div>      
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ <script>
+    $(document).ready(function () {
+        $('.timer').each(function () {
+            var $this = $(this),
+                countTo = $this.attr('data-to'),
+                speed = parseInt($this.attr('data-speed'));
+    
+            $({ countNum: 0 }).animate(
+                { countNum: countTo },
+                {
+                    duration: speed,
+                    easing: 'swing',
+                    step: function () {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function () {
+                        $this.text(this.countNum);
+                    }
+                }
+            );
+        });
+    });
+    </script>
+    
+<br><br><br>
+
+
+<style>
+        .section-title {
+            font-weight: 800;
+            color: #222;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .title-underline {
+            width: 60px;
+            height: 4px;
+            background-color: #004a99;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .project-card {
+            text-align: center;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 0 auto 25px auto;
+            border: 1px solid #f1f1f1;
+            transition: all 0.3s ease;
+            max-width: 320px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #004a99;
+        }
+
+        .img-container {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            background: #f8f9fa;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 180px; 
+            object-fit: contain; 
+            padding: 10px;
+        }
+
+        .fund-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #6c757d;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .amount-tag {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #004a99;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container py-5">
+        
+        <div class="row mb-5 text-center">
+            <div class="col-12">
+                <h2 class="section-title">Pioneer in Construction Industry</h2>
+                <div class="title-underline"></div>
+                
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            
+            <div class="col-md-4">
+                <div class="project-card">
+                    <div class="img-container">
+                        <img src="../all/images/adb.png" alt="ADB Project">
+                    </div>
+                    <div class="fund-label">ADB Funded Projects</div>
+                    <div class="amount-tag">Over 12Bn</div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project-card">
+                    <div class="img-container">
+                        <img src="../all/images/lo.webp" alt="Local Bank Project">
+                    </div>
+                    <div class="fund-label">Local Bank Funded Projects</div>
+                    <div class="amount-tag">Over 10Bn</div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project-card">
+                    <div class="img-container">
+                        <img src="../all/images/w12.jpg" alt="World Bank Project">
+                    </div>
+                    <div class="fund-label">World Bank Funded Projects</div>
+                    <div class="amount-tag">Over 10Bn</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+<div class="gallery-section">
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="../all/images/on/1.jpeg" alt="Image 1">
+        </div>
+
+        <div class="gallery-item">
+            <img src="../all/images/on/2.jpeg" alt="Image 2">
+        </div>
+
+        <div class="gallery-item">
+            <img src="../all/images/on/3.jpeg" alt="Image 3">
+        </div>
+
+        <div class="gallery-item">
+            <img src="../all/images/on/4.jpeg" alt="Image 4">
+        </div>
+
+       
+    </div>
+</div>
+
+
+
+
+<style>.gallery-section {
+    padding: 40px 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 0 40px; /* left right margin */
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: 0.4s ease;
+    background: #fff;
+}
+
+.gallery-item img {
+    width: 90%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        margin: 0 15px;
+    }
+}</style>
+
+
+
+
+
+
+
+
+
+
 <br>
 </body>
 </html>

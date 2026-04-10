@@ -240,9 +240,89 @@
         </div>
         
     </section>
-                   <div style="text-align: center; margin-top: 30px;">
-    <img src="../all/images/m.png" alt="Quarry Locations in Sri Lanka" style="width: 100%; max-width: 850px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.12);">
+       <div class="image-wrapper">
+  <div class="image-container">
+    <img src="../all/images/r.jpeg" alt="Quarry Locations in Sri Lanka" loading="lazy">
+    <div class="image-overlay">
+      <span>Quarry Locations in Sri Lanka</span>
+    </div>
   </div>
+</div>
+
+<style>
+  /* Wrapper eka center karanna saha space thiyanna */
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 15px;
+    margin-top: 20px;
+  }
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* Tikak loku kala */
+    overflow: hidden;
+    border-radius: 15px; /* Border radius smooth kala */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    line-height: 0; /* Image eka yata gap eka ain karanna */
+  }
+
+  /* Image eka responsive karanna */
+  .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  /* User friendly hover effect */
+  .image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .image-container:hover img {
+    transform: scale(1.03); /* Hover karaddi poddak zoom wenawa */
+  }
+
+  /* Podi caption ekak image eka udata (Optional) */
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .image-container:hover .image-overlay {
+    opacity: 1;
+  }
+
+  .image-overlay span {
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* Mobile devices waladi auto adjust wenawa */
+  @media (max-width: 600px) {
+    .image-wrapper {
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .image-container {
+      border-radius: 10px;
+    }
+  }
+</style>
     
     <!-- jQuery include  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
