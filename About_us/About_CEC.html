@@ -261,6 +261,47 @@
             transform: translateX(4px);
         }
 
+        .vm-content {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .vm-sections-row {
+            margin-top: 30px;
+        }
+
+        .vm-block {
+            margin-bottom: 35px;
+        }
+
+        .vm-media {
+            margin-top: 18px;
+        }
+
+        @media (max-width: 767px) {
+            .vm-content {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .company-title {
+                font-size: 28px;
+                line-height: 1.35;
+            }
+
+            .company-text {
+                text-align: left;
+            }
+
+            .mission-box {
+                margin-top: 16px;
+            }
+
+            .mission-box h2 {
+                margin-top: 0;
+            }
+        }
+
        
         </style>
 
@@ -288,10 +329,10 @@
         </div>
 
         <br><br>
-        <div class="row mt-5">
+        <div class="row vm-sections-row">
 
     <!-- Vision Section -->
-    <div class="col-12 mb-5">
+    <div class="col-xs-12 vm-block">
         <div class="row align-items-center">
 
             <!-- Text -->
@@ -308,7 +349,7 @@
             </div>
 
             <!-- Image -->
-            <div class="col-md-5">
+            <div class="col-md-5 vm-media">
                 <img src="../all/images/mi.jpg" alt="Vision Image" class="img-fluid rounded shadow w-100" style="height: 280px; object-fit: cover;">
             </div>
 
@@ -316,9 +357,9 @@
     </div>
 
     <!-- Mission Section -->
-    <div class="col-12">
+    <div class="col-xs-12 vm-block">
         <div class="row align-items-center">
-            <div class="col-md-5">
+            <div class="col-md-5 vm-media">
                 <img src="../all/images/vi.jpg" alt="Mission Image" class="img-fluid rounded shadow w-100" style="height: 280px; object-fit: cover;">
             </div>
 
