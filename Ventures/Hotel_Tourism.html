@@ -221,14 +221,14 @@
                         <div class="col-xs-12">
                             <!-- section title -->
                             <div class="section_heading">
-                                <h2 class="section_title">
+                                <h2 class="company-title">
                                     <span>Hotel & Tourism </span>
                                 </h2>
-                                <p style="font-size: 20px; line-height: 1.6;">
-                                    <b>This is the most popular and best tour package
-                                        Experience the Magic of Sri Lanka Through Our Eyes.
-                                        Embark on a romantic, family, or solo adventure in Sri Lanka with a bespoke
-                                        itinerary that turns every moment into a memory.</b>
+                                <p class="company-text">
+                                    This is the most popular and best tour package
+                                    Experience the Magic of Sri Lanka Through Our Eyes.
+                                    Embark on a romantic, family, or solo adventure in Sri Lanka with a bespoke
+                                    itinerary that turns every moment into a memory.
                                 </p>
 
                             </div>
@@ -246,8 +246,8 @@
                                     <div class="col-md-6 col-sm-12">
                                         <div class="about-content">
                                             <span class="mar-bottom-15">Tourism-FOCUSED VERSION</span>
-                                            <h2 class="mar-bottom-30">UNIQUE Tourism MODEL IN SRI LANKA<br> </h2>
-                                            <p class="mar-bottom-40">CEC Consulting Engineers & Contractors (Pvt) Ltd.
+                                            <h2 class="company-title">UNIQUE Tourism MODEL IN SRI LANKA<br> </h2>
+                                            <p class="company-text">CEC Consulting Engineers & Contractors (Pvt) Ltd.
                                                 proudly expands its services into Sri Lanka’s fast-growing Tourism &
                                                 Hotel sector, offering a range of exclusive tour packages and partnered
                                                 hotel stays for both local and international travelers. Our tourism
@@ -306,10 +306,10 @@
                 <div class="col-xs-12">
                     <!-- section title -->
                     <div class="section_heading">
-                        <h2 class="section_title">
+                        <h2 class="company-title">
                             <span>Quality & Certifications</span>
                         </h2>
-                        <p class="heading_txt">
+                        <p class="company-text">
                             Our Tourism & Hotel Division follows strict quality and safety standards to ensure every
                             guest enjoys
                             a reliable, comfortable, and memorable travel experience. All our tours and hotel partners
@@ -365,6 +365,41 @@
 
 
     <style>
+        .company-title {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: #111;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .company-title::after {
+            content: "";
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(to right, #c79a3b, #e0b35a);
+            display: block;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        .company-text {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #555;
+            text-align: justify;
+            font-family: 'Lora', serif;
+            margin-bottom: 20px;
+            transition: 0.3s ease;
+        }
+
+        .company-text:hover {
+            color: #222;
+            transform: translateX(4px);
+        }
+
         .caption_slide1 {
             text-align: center;
             width: 100%;

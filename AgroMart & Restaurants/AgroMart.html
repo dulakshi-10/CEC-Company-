@@ -211,10 +211,11 @@
                         <div class="col-xs-12">
                             <!-- section title -->
                             <div class="section_heading">
-                                <h2 class="section_title">
+                                <h2 class="company-title">
                                     <span>Agromart</span>
                                 </h2>
-                                <p>Agromart represents a digital transformation in Sri Lanka's agriculture sector,
+                                <p class="company-text">Agromart represents a digital transformation in Sri Lanka's
+                                    agriculture sector,
                                     making farming more profitable, sustainable, and connected through technology.
                             </div>
                         </div>
@@ -231,8 +232,8 @@
                                     <div class="col-md-6 col-sm-12">
                                         <div class="about-content">
                                             <span class="mar-bottom-15">AgroMart VERSION</span>
-                                            <h2 class="mar-bottom-30">UNIQUE AGROMART MODEL IN SRI LANKA<br> </h2>
-                                            <p class="mar-bottom-40">CEC Agromart represents a perfect fusion of modern
+                                            <h2 class="company-title">UNIQUE AGROMART MODEL IN SRI LANKA<br> </h2>
+                                            <p class="company-text">CEC Agromart represents a perfect fusion of modern
                                                 retail and traditional farming. We are a growing enterprise that
                                                 delivers vegetables and fruits cultivated in our own farms directly to
                                                 our supermarket shelves. This unique farm-to-store model allows us to
@@ -265,7 +266,7 @@
                                 <div class="col-xs-12">
                                     <!-- section title -->
                                     <div class="section_heading">
-                                        <h2 class="section_title">
+                                        <h2 class="company-title">
                                             <span>Our &amp; properties </span>
                                         </h2>
 
@@ -363,6 +364,41 @@
     </style>
 
     <style>
+        .company-title {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: #111;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .company-title::after {
+            content: "";
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(to right, #c79a3b, #e0b35a);
+            display: block;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        .company-text {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #555;
+            text-align: justify;
+            font-family: 'Lora', serif;
+            margin-bottom: 20px;
+            transition: 0.3s ease;
+        }
+
+        .company-text:hover {
+            color: #222;
+            transform: translateX(4px);
+        }
+
         .caption_slide1 {
             text-align: center;
             width: 100%;

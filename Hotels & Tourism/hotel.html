@@ -190,7 +190,7 @@
     <div class="caption_slide1 fadeInRight" style="
         position:absolute;
         top:35%;
-        left:1%;
+        left:0.1%;
         animation-duration: 3s;
  
         text-align:center;
@@ -214,10 +214,11 @@
                         <div class="col-xs-12">
                             <!-- section title -->
                             <div class="section_heading">
-                                <h2 class="section_title">
+                                <h2 class="company-title">
                                     <span>Hotel</span>
                                 </h2>
-                                <p>A hotel is a commercial establishment that provides paid lodging, usually on a
+                                <p class="company-text">A hotel is a commercial establishment that provides paid
+                                    lodging, usually on a
                                     short-term basis. It offers a range of accommodation types and services, from basic
                                     rooms to luxury suites, often including amenities such as restaurants, room service,
                                     housekeeping, and recreational facilities. Hotels cater to various travelers,
@@ -236,8 +237,8 @@
                                     <div class="col-md-6 col-sm-12">
                                         <div class="about-content">
                                             <span class="mar-bottom-15">Hotel VERSION</span>
-                                            <h2 class="mar-bottom-30">UNIQUE Hotel MODEL IN SRI LANKA<br> </h2>
-                                            <p class="mar-bottom-40">CEC’s prime properties across Sri Lanka present a
+                                            <h2 class="company-title">UNIQUE Hotel MODEL IN SRI LANKA<br> </h2>
+                                            <p class="company-text">CEC’s prime properties across Sri Lanka present a
                                                 unique portfolio for exclusive villa and hotel developments that blend
                                                 luxury, nature, and authentic experiences. "Pasikudah Eco Villa"
                                                 concept—a serene, nature-immersive retreat perfect for eco-conscious
@@ -279,6 +280,41 @@
                             <!-- Card 1 -->
                             <style>
                                 /* Custom Styles for Equal Height Cards */
+
+                                .company-title {
+                                    font-size: 32px;
+                                    font-weight: 600;
+                                    line-height: 1.3;
+                                    color: #111;
+                                    font-family: 'Montserrat', sans-serif;
+                                    margin-bottom: 25px;
+                                    position: relative;
+                                }
+
+                                .company-title::after {
+                                    content: "";
+                                    width: 90px;
+                                    height: 4px;
+                                    background: linear-gradient(to right, #c79a3b, #e0b35a);
+                                    display: block;
+                                    margin-top: 15px;
+                                    border-radius: 10px;
+                                }
+
+                                .company-text {
+                                    font-size: 15px;
+                                    line-height: 1.5;
+                                    color: #555;
+                                    text-align: justify;
+                                    font-family: 'Lora', serif;
+                                    margin-bottom: 20px;
+                                    transition: 0.3s ease;
+                                }
+
+                                .company-text:hover {
+                                    color: #222;
+                                    transform: translateX(4px);
+                                }
 
 
                                 .row.g-4 {
@@ -598,7 +634,7 @@
                                         </div>
 
                                         <!-- Card 3 -->
-                                        <div class="col-md-6 col-lg-4">
+                                        <div class="col-md-6 col-lg-4" style="margin-bottom: 30px;">
                                             <div
                                                 class="card tour-card shadow-sm border-0 rounded-4 overflow-hidden h-100">
                                                 <a href="https://www.google.com/search?q=Maravila+Golden+Coconut+Villa+-+Maravila&sca_esv=f2a9dfa6243c1f6a&biw=1366&bih=607&aic=0&sxsrf=ANbL-n7XX2pFA8clqur4eEAHB1mFHgrXkg%3A1768374259986&ei=8z9nae3sO8aQ4-EPzN3j8AY&ved=0ahUKEwitsuK8u4qSAxVGyDgGHczuGG4Q4dUDCBE&uact=5&oq=Maravila+Golden+Coconut+Villa+-+Maravila&gs_lp=Egxnd3Mtd2l6LXNlcnAiKE1hcmF2aWxhIEdvbGRlbiBDb2NvbnV0IFZpbGxhIC0gTWFyYXZpbGEyBxAhGKABGAoyBxAhGKABGAoyBxAhGKABGAoyBxAhGKABGApIsgdQAFgAcAB4AZABAJgBvwGgAb8BqgEDMC4xuAEDyAEA-AEC-AEBmAIBoALkAZgDAJIHAzItMaAHhwayBwMyLTG4B-QBwgcDMy0xyAcLgAgA&sclient=gws-wiz-serp"
