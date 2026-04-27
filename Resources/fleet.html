@@ -31,6 +31,190 @@
     <!--Font Awesome-->
     <link href="../all/css/font-awesome.css" rel="stylesheet" type="text/css">
 
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <style>
+        #quarry-info {
+            padding-top: 40px;
+            padding-bottom: 30px;
+        }
+
+        #quarry-info.container {
+            width: 96%;
+            max-width: 1480px;
+        }
+
+        .quarry-copy {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .quarry-map-wrap {
+            margin-top: 28px;
+            background: #ffffff;
+            border: 1px solid #e9edf3;
+            border-radius: 14px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .quarry-map-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 14px 18px;
+            background: linear-gradient(90deg, #113a72, #0f5ba4);
+            color: #fff;
+        }
+
+        .quarry-map-head h3 {
+            font-size: 20px;
+            margin: 0;
+            color: #fff;
+        }
+
+        .map-live-badge {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        #cec-live-map {
+            width: 100%;
+            height: 800px;
+            background: #dbe8f6;
+        }
+
+        .map-location-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+            padding: 14px;
+            background: #f8fbff;
+            border-top: 1px solid #ecf0f6;
+        }
+
+        .map-location-btn {
+            border: 1px solid #d6e1ef;
+            background: #ffffff;
+            color: #174272;
+            border-radius: 8px;
+            padding: 9px 12px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .map-location-btn:hover,
+        .map-location-btn:focus {
+            border-color: #0d63b3;
+            box-shadow: 0 6px 14px rgba(17, 91, 163, 0.16);
+            outline: none;
+        }
+
+        .map-location-btn.active {
+            color: #fff;
+            border-color: #0f5ba4;
+            background: linear-gradient(90deg, #0f5ba4, #1572c7);
+        }
+
+        .cec-marker {
+            width: 34px;
+            height: 44px;
+            position: relative;
+        }
+
+        .cec-marker .pin-pulse,
+        .cec-marker .pin-core {
+            position: absolute;
+        }
+
+        .cec-marker .pin-core {
+            width: 24px;
+            height: 24px;
+            top: 2px;
+            left: 50%;
+            border-radius: 50% 50% 50% 0;
+            background: #0f5ba4;
+            border: 2px solid #fff;
+            transform: translateX(-50%) rotate(-45deg);
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        .cec-marker .pin-core::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            top: 6px;
+            left: 6px;
+            border-radius: 50%;
+            background: #ffffff;
+        }
+
+        .cec-marker .pin-pulse {
+            width: 30px;
+            height: 30px;
+            left: 50%;
+            bottom: 0;
+            border-radius: 50%;
+            background: rgba(22, 116, 200, 0.2);
+            border: 1px solid rgba(22, 116, 200, 0.65);
+            transform: translateX(-50%);
+            animation: markerPulse 2s ease-out infinite;
+        }
+
+        .cec-marker.selected .pin-pulse {
+            background: rgba(255, 154, 0, 0.28);
+            border-color: rgba(255, 154, 0, 0.8);
+            animation-duration: 1.2s;
+        }
+
+        .cec-marker.selected .pin-core {
+            background: #ff9a00;
+        }
+
+        @keyframes markerPulse {
+            0% {
+                transform: translateX(-50%) scale(0.7);
+                opacity: 0.95;
+            }
+
+            100% {
+                transform: translateX(-50%) scale(2.2);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 1199px) {
+            #cec-live-map {
+                height: 640px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #cec-live-map {
+                height: 500px;
+            }
+
+            .quarry-map-head h3 {
+                font-size: 17px;
+            }
+        }
+    </style>
+
     <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 
@@ -272,30 +456,153 @@
 
     <section id="quarry-info" class="container mt-5">
 
-        <p style="font-size: 17px; line-height: 1.8; color: #333; margin-bottom: 20px;">
+        <p class="quarry-copy">
             To ensure an unhindered supply, we have acquired sprawling quarry complexes across Sri Lanka with vast
             granite reserves. The bulk of our regular stone requirements is sourced from these quarries.
         </p>
-        <p style="font-size: 17px; line-height: 1.8; color: #333; margin-bottom: 20px;">
+        <p class="quarry-copy">
             We continuously upgrade our quarrying facilities to harness the full potential of this valuable asset. By
             adopting cutting-edge techniques, we streamline mining operations efficiently.
         </p>
-        <p style="font-size: 17px; line-height: 1.8; color: #333; margin-bottom: 20px;">
+        <p class="quarry-copy">
             Advanced machinery, equipment, and modern technologies are deployed across the quarry sites to maintain
             operations in line with international standards. We take pride in meeting demands of any scale for crushed
             products within committed timelines.
         </p>
-        <p style="font-size: 17px; line-height: 1.8; color: #333; margin-bottom: 20px;">
+        <p class="quarry-copy">
             With strong infrastructure, abundant resources, skilled manpower, and modern transit provisions, we are
             fully equipped to conduct large-scale quarrying and fulfill both immediate and bulk processed product
             demands.
         </p>
 
-        <div style="text-align: center; margin-top: 30px;">
-            <img src="../all/images/slider/map.jpg" alt="Quarry Locations in Sri Lanka"
-                style="width: 100%; max-width: 850px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.12);">
+        <div class="quarry-map-wrap">
+            <!-- <div class="quarry-map-head">
+                <h3>Interactive Quarry Network Map</h3>
+                <span class="map-live-badge">Live View</span>
+            </div> -->
+            <div id="cec-live-map" aria-label="Interactive map of quarry and plant complex locations"></div>
+            <div id="map-location-list" class="map-location-list"></div>
         </div>
     </section>
+
+    <!-- Leaflet Map JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        (function () {
+            var mapContainer = document.getElementById('cec-live-map');
+            var locationList = document.getElementById('map-location-list');
+
+            if (!mapContainer || typeof L === 'undefined') {
+                return;
+            }
+
+            var sriLankaBounds = L.latLngBounds(
+                L.latLng(5.75, 79.4),
+                L.latLng(10.1, 82.05)
+            );
+
+            var map = L.map('cec-live-map', {
+                zoomControl: false,
+                scrollWheelZoom: false,
+                dragging: false,
+                touchZoom: false,
+                doubleClickZoom: false,
+                boxZoom: false,
+                keyboard: false,
+                minZoom: 7,
+                maxZoom: 9,
+                maxBoundsViscosity: 1.0
+            }).setView([7.6, 80.7], 7);
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+                maxZoom: 18,
+                subdomains: 'abcd',
+                noWrap: true
+            }).addTo(map);
+
+            map.setMaxBounds(sriLankaBounds.pad(0.05));
+
+            var locations = [
+                { name: 'Vavuniya Quarry & Plant Complex', lat: 8.754, lng: 80.499 },
+                { name: 'Medawachchiya Quarry & Plant Complex', lat: 8.539, lng: 80.499 },
+                { name: 'Mahailuppallama Sand Processing Complex', lat: 8.116, lng: 80.252 },
+                { name: 'Polonnaruwa Quarry & Plant Complex', lat: 7.94, lng: 81.018 },
+                { name: 'Moragahakanda Quarry & Plant Complex', lat: 7.694, lng: 80.95 },
+                { name: 'Narammala Quarry & Central Plant Complex', lat: 7.433, lng: 80.215 },
+                { name: 'Haputhale Quarry & Plant Complex', lat: 6.765, lng: 80.951 },
+                { name: 'Bibile Quarry & Plant Complex', lat: 7.164, lng: 81.218 },
+                { name: 'Koslanda Quarry & Plant Complex', lat: 6.737, lng: 81.028 },
+                { name: 'Kaduwela Quarry & Plant Complex', lat: 6.932, lng: 79.978 },
+                { name: 'Hambantota Quarry & Plant Complex', lat: 6.3, lng: 81.1185 }
+            ];
+
+            var markers = [];
+            var activeIndex = 0;
+
+            function markerIcon() {
+                return L.divIcon({
+                    className: 'cec-marker',
+                    html: '<span class="pin-core"></span><span class="pin-pulse"></span>',
+                    iconSize: [34, 44],
+                    iconAnchor: [17, 40],
+                    popupAnchor: [0, -34]
+                });
+            }
+
+            function activateLocation(index, panToMarker) {
+                activeIndex = index;
+
+                markers.forEach(function (entry, idx) {
+                    var markerEl = entry.marker.getElement();
+                    if (markerEl) {
+                        markerEl.classList.toggle('selected', idx === index);
+                    }
+                    entry.button.classList.toggle('active', idx === index);
+                });
+
+                if (panToMarker !== false) {
+                    markers[index].marker.openPopup();
+                }
+            }
+
+            locations.forEach(function (location, index) {
+                var marker = L.marker([location.lat, location.lng], { icon: markerIcon() })
+                    .addTo(map)
+                    .bindPopup('<strong>' + location.name + '</strong>');
+
+                var button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'map-location-btn';
+                button.textContent = location.name;
+                button.addEventListener('click', function () {
+                    activateLocation(index, true);
+                });
+
+                marker.on('click', function () {
+                    activateLocation(index, false);
+                });
+
+                locationList.appendChild(button);
+                markers.push({ marker: marker, button: button });
+            });
+
+            var points = locations.map(function (location) {
+                return [location.lat, location.lng];
+            });
+
+            map.fitBounds(L.latLngBounds(points).pad(0.2), { padding: [22, 22] });
+
+            activateLocation(0, false);
+
+            map.invalidateSize();
+            window.addEventListener('resize', function () {
+                map.invalidateSize();
+            });
+        })();
+    </script>
 
     <!--*Footer*-->
     <footer id="mt_footer">
@@ -413,49 +720,43 @@
         <span class="fa fa-arrow-up"></span>
     </a>
 
+    <!--*Scripts*-->
 
-</body>
+    <!--Latest jquery -->
+    <script src="../all/js/jquery-3.2.1.min.js"></script>
 
-</html>
+    <!-- latest Bootstrap -->
+    <script src="../all/js/bootstrap.min.js"></script>
 
+    <!-- wow animated jquery -->
+    <script src="../all/js/wow.min.js"></script>
 
-<!--*Scripts*-->
+    <!-- Navigation jquery -->
+    <script src="../all/js/jquery.nav.js"></script>
 
-<!--Latest jquery -->
-<script src="../all/js/jquery-3.2.1.min.js"></script>
+    <!-- Slick jquery -->
+    <script src="../all/js/slick.js"></script>
 
-<!-- latest Bootstrap -->
-<script src="../all/js/bootstrap.min.js"></script>
+    <!-- Slicknav jquery -->
+    <script src="../all/js/slicknav.js"></script>
 
-<!-- wow animated jquery -->
-<script src="../all/js/wow.min.js"></script>
+    <!-- custom nav jquery -->
+    <script src="../all/js/custom-nav.js"></script>
 
-<!-- Navigation jquery -->
-<script src="../all/js/jquery.nav.js"></script>
+    <!-- Easing Jquery -->
+    <script src="../all/js/jquery.easing.min.js"></script>
 
-<!-- Slick jquery -->
-<script src="../all/js/slick.js"></script>
+    <!-- Modal Video Jquery -->
+    <script src="../all/js/jquery-modal-video.min.js"></script>
 
-<!-- Slicknav jquery -->
-<script src="../all/js/slicknav.js"></script>
+    <!-- Appear Jquery -->
+    <script src="../all/js/jquery.appear.js"></script>
 
-<!-- custom nav jquery -->
-<script src="../all/js/custom-nav.js"></script>
+    <!-- custom video Jquery -->
+    <script src="../all/js/custom-video.js"></script>
 
-<!-- Easing Jquery -->
-<script src="../all/js/jquery.easing.min.js"></script>
-
-<!-- Modal Video Jquery -->
-<script src="../all/js/jquery-modal-video.min.js"></script>
-
-<!-- Appear Jquery -->
-<script src="../all/js/jquery.appear.js"></script>
-
-<!-- custom video Jquery -->
-<script src="../all/js/custom-video.js"></script>
-
-<!-- main default Jquery -->
-<script src="../all/js/main.js"></script>
+    <!-- main default Jquery -->
+    <script src="../all/js/main.js"></script>
 </body>
 
 </html>
