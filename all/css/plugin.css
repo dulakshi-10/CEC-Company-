@@ -1752,8 +1752,7 @@
 
 .slick-prev:before,
 .slick-next:before {
-  font-family: 'Montserrat', sans-serif;
-    /* font-family: 'fontawesome'; */
+  font-family: 'FontAwesome';
     font-size: 52px;
     line-height: 1;
     opacity: .8;
@@ -2639,14 +2638,12 @@
 /* background color for responsive button */
 
 .slicknav_btn.slicknav_open:before {
-  font-family: 'Montserrat', sans-serif;
-    /* font-family: 'fontawesome'; */
+  font-family: 'FontAwesome';
     content: "\f00d"
 }
 
 .slicknav_btn.slicknav_collapsed:before {
-  font-family: 'Montserrat', sans-serif;
-    /* font-family: 'fontawesome'; */
+  font-family: 'FontAwesome';
     content: "\f0c9"
 }
 

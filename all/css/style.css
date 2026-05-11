@@ -1604,8 +1604,7 @@ section#mt_faq-testi .section_heading{padding: 0;}
 }
 .accrodion-grp .accrodion .accrodion-title h4:before {
   content: '\f107';
-  font-family: 'Montserrat', sans-serif;
-  /* font-family: 'FontAwesome'; */
+  font-family: 'FontAwesome';
   color: #222222;
   font-size: 20px;
   position: absolute;
@@ -1653,8 +1652,7 @@ section#mt_faq-testi .section_heading{padding: 0;}
 
 .mt_testimonial .testimonial_main p:before {
     content: "\f10d";
-    font-family: 'Montserrat', sans-serif;
-    /* font-family: fontawesome; */
+    font-family: 'FontAwesome';
     font-size: 45px;
     left: 0px;
     opacity: 0.2;
@@ -3188,8 +3186,7 @@ section#mt_faq-testi .section_heading{padding: 0;}
 }
 .expand-history .expand-history-content:after {
     content: "\f04b";
-    font-family: 'Montserrat', sans-serif;
-    /* font-family: fontawesome; */
+    font-family: 'FontAwesome';
     font-size: 35px;
     position: absolute;
     right: -22px;
@@ -4904,18 +4901,28 @@ p.lt-pswrd{margin-bottom: 20px;}
 
 
   /* Text */
-   .company-text {
-            font-size: 16px;
-            line-height: 1.5;
-            color: #555;
-            text-align: justify;
-            font-family: 'Open Sans', sans-serif;
-            margin-bottom: 20px;
-            transition: 0.3s ease;
-        }
+  .company-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #111;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 25px;
+    position: relative;
+  }
 
-        .company-text:hover {
-            color: #222;
-            transform: translateX(4px);
-        }
+  .company-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+  }
+
+  .company-text:hover {
+    color: #222;
+    transform: translateX(4px);
+  }
 }
