@@ -74,7 +74,8 @@
             <div class="container">
 
                 <div class="logo pull-left">
-                    <a href="../index.html"><img loading="lazy" decoding="async" src="../all/images/c-logo.png" alt=""></a>
+                    <a href="../index.html"><img loading="lazy" decoding="async" src="../all/images/c-logo.png"
+                            alt=""></a>
                 </div>
 
                 <div id="navbar" class="navbar-nav-wrapper pull-right">
@@ -275,34 +276,38 @@
     <!--*EndAbout*-->
     <!-- End Slider --> <!--* Partner*-->
 
-    <div class="container">
-        <div class="row" style="align-self: center;">
-            <section id="mt_services" class="wow slideInLeft">
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="core_list text-center">
-                        <img loading="lazy" decoding="async" src="../all/images/slider/ongoin.jpeg" alt="partner">
-                        <div class="core_content mar-top-20">
-                            <p class="mar-bottom-20">
-                                Our ongoing projects reflect our commitment to quality, innovation, and timely delivery.
-                            </p>
-                            <a href="../Project/On_going.html" class="mt_btn_yellow">On-going</a>
-                        </div>
-                    </div>
+    <section id="mt_services" class="wow slideInLeft project-showcase">
+        <div class="container">
+            <div class="project-feature">
+                <div class="project-feature__image">
+                    <img loading="lazy" decoding="async" src="../all/images/slider/ongoin.jpeg" alt="On-going project">
                 </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="core_list text-center">
-                        <img loading="lazy" decoding="async" src="../all/images/slider/completed.jpg" alt="partner">
-                        <div class="core_content mar-top-20">
-                            <p class="mar-bottom-20">Successfully completed projects that reflect our commitment to high
-                                standards and customer satisfaction.</p>
-                            <a href="../Project/Completed.html" class="mt_btn_yellow">Completed</a>
-                        </div>
-                    </div>
+                <div class="project-feature__content">
+                    <span class="mar-bottom-15">On-going Projects</span>
+                    <h2 class="company-title">Work in Progress</h2>
+                    <p class="company-text">
+                        Our ongoing projects reflect our commitment to quality, innovation, and timely delivery.
+                    </p>
+                    <a href="../Project/On_going.html" class="mt_btn_yellow">On-going</a>
                 </div>
+            </div>
+
+            <div class="project-feature project-feature--reverse">
+                <div class="project-feature__image">
+                    <img loading="lazy" decoding="async" src="../all/images/slider/completed.jpg"
+                        alt="Completed project">
+                </div>
+                <div class="project-feature__content">
+                    <span class="mar-bottom-15">Completed Projects</span>
+                    <h2 class="company-title">Delivered with Confidence</h2>
+                    <p class="company-text">
+                        Successfully completed projects that reflect our commitment to high standards and customer
+                        satisfaction.
+                    </p>
+                    <a href="../Project/new.html" class="mt_btn_yellow">Completed</a>
+                </div>
+            </div>
         </div>
-    </div>
     </section>
 
     <section id="mt_partner" class="super_partner">
@@ -311,9 +316,9 @@
                 <div class="col-xs-12">
                     <!-- section title -->
                     <div class="section_heading">
-                        <p class="company-title">
+                        <h2 class="company-title">
                             <span>Quality & Certifications</span>
-                        </p>
+                        </h2>
                         <p class="company-text">Our commitment to excellence is firmly established through <span
                                 class="highlight">ISO 9001 certifications</span>, underscoring our customer-centric
                             approach and unwavering quality standards.</p>
@@ -336,50 +341,40 @@
             width: 100%;
         }
 
-        .col-md-3.col-sm-6 {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
+        .project-showcase {
+            padding: 10px 0 30px;
         }
 
-        .core_list {
-
-            width: 100%;
-            max-width: 350px;
-            height: 450px;
+        .project-feature {
             display: flex;
-            flex-direction: column;
-            background: #fff;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 55px;
         }
 
-        .core_list img {
+        .project-feature__image,
+        .project-feature__content {
+            flex: 1 1 0;
+        }
+
+        .project-feature__image img {
             width: 100%;
-            height: 250px;
+            height: 360px;
             object-fit: cover;
-
-            border-radius: 10px;
+            border-radius: 12px;
             display: block;
-            margin: 0 auto 15px auto;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
         }
 
-        .core_content {
-            flex-grow: 1;
+        .project-feature__content {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding-top: 15px;
+            justify-content: center;
         }
 
-        .mar-bottom-20 {
+        .project-feature__content .company-title {
+            margin-top: 0;
             margin-bottom: 20px;
-            min-height: 60px;
-            color: #555;
-            line-height: 1.5;
-            flex-grow: 1;
         }
 
         .mt_btn_yellow {
@@ -391,32 +386,34 @@
             border-radius: 5px;
             font-weight: bold;
             transition: all 0.3s ease;
-            margin-top: auto;
-            align-self: center;
-            min-width: 150px;
-            text-align: center;
+            width: 150px;
+            margin-top: 10px;
         }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .core_list {
-                height: auto;
-                min-height: 450px;
-                max-width: 300px;
+        .project-feature--reverse {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 991px) {
+
+            .project-feature,
+            .project-feature--reverse {
+                flex-direction: column;
+                gap: 22px;
             }
 
-            .core_list img {
-                height: 200px;
+            .project-feature__image img {
+                height: 260px;
             }
         }
 
         @media (max-width: 576px) {
-            .core_list {
-                max-width: 100%;
+            .project-feature__image img {
+                height: 220px;
             }
 
-            .core_list img {
-                height: 180px;
+            .project-showcase {
+                padding-bottom: 10px;
             }
         }
     </style>
@@ -519,10 +516,14 @@
                         <div class="made_txt" style="align-content: end;">
                             <img loading="lazy" decoding="async" src="../all/images/icons/ciobAllWhite-03.png"
                                 style="width: 70px; vertical-align: top;">
-                            <img loading="lazy" decoding="async" src="../all/images/icons/iso14001.png" style="width: 70px; vertical-align: top;">
-                            <img loading="lazy" decoding="async" src="../all/images/icons/SlabWhite.png" style="width: 70px; vertical-align: top;">
-                            <img loading="lazy" decoding="async" src="../all/images/icons/iso45001.png" style="width: 70px; vertical-align: top;">
-                            <img loading="lazy" decoding="async" src="../all/images/icons/sls-04.png" style="width: 120px; vertical-align: top;">
+                            <img loading="lazy" decoding="async" src="../all/images/icons/iso14001.png"
+                                style="width: 70px; vertical-align: top;">
+                            <img loading="lazy" decoding="async" src="../all/images/icons/SlabWhite.png"
+                                style="width: 70px; vertical-align: top;">
+                            <img loading="lazy" decoding="async" src="../all/images/icons/iso45001.png"
+                                style="width: 70px; vertical-align: top;">
+                            <img loading="lazy" decoding="async" src="../all/images/icons/sls-04.png"
+                                style="width: 120px; vertical-align: top;">
 
                         </div>
                     </div>
